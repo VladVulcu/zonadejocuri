@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-5">
+        <app-game-list (gameSelected)="selectedGame = $event"></app-game-list>
+    </div>
+    <div class="col-md-7">
+        <app-game-detail *ngIf="selectedGame; else infoText"
+        [game]="selectedGame"></app-game-detail>
+            <ng-template #infoText>
+                <p>Please select a Video Game</p>
+            </ng-template>
+    </div>
+</div>
+

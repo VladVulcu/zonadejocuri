@@ -1,0 +1,12 @@
+<a 
+    href="#" 
+    class="list-group-item clearfix"
+    (click)="onItemSelection()">
+    <div class="float-start">
+        <h4 class="list-group-item-heading">{{game.name}}</h4>
+        <p class="list-group-item-text">{{game.description}}</p>
+    </div>
+    <span class="float-end">
+        <img src="{{game.imagePath}}" alt="{{game.name}}" class="img-responsive" style="max-height: 50px">
+    </span>
+</a>

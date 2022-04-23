@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img [src]="game.imagePath" alt="{{game.name}}" class="img-responsive" style="max-height: 300px">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{game.name}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group" class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Manage Game</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" style="cursor: pointer;" (click)="onAddToShoppingList()">Shopping List</a></li>
+                <li><a class="dropdown-item" href="#" >Edit Game</a></li>
+                <li><a class="dropdown-item" href="#" >Delete Game</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{game.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let g of game.genres">{{g.name}}</li>
+        </ul>
+    </div>
+</div>
+
+
