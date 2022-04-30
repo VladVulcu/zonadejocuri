@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  featureSelection = 'games';
-
-  onNavigate(feature: string) {
-    this.featureSelection = feature;
-  }
 }

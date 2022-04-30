@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Game } from '../../game.model';
 
 @Component({
@@ -8,14 +8,8 @@ import { Game } from '../../game.model';
 })
 export class GameItemComponent implements OnInit {
   @Input() game: Game;
-  @Output() itemSelected = new EventEmitter<void>();
-  constructor() {}
+  @Input() index: number;
 
   ngOnInit(): void {
   }
-
-  onItemSelection() {
-    this.itemSelected.emit();
-  }
-
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from './game.model';
 import { GameService } from './game.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { GameService } from './game.service';
   providers: [GameService]
 })
 export class GamesComponent implements OnInit {
-  selectedGame: Game;
+  
   constructor() { }
 
   ngOnInit(): void {

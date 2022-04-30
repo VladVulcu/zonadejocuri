@@ -5,6 +5,7 @@ import { Game } from "./game.model";
 
 @Injectable()
 export class GameService {
+
     private games: Game[] = [
         new Game('FIFA 22', 'Take part in the new FIFA 22', '../../assets/fifa22.jpg', [new Genre('Sports'), new Genre('Single-/Multiplayer'), new Genre('Competition')]),
         new Game('Spider Man', 'Peter Parker fighting big crime in New York.', '../../assets/spiderman.jpg', [new Genre('Open-World'), new Genre('Adventure'), new Genre('Crime')]),
@@ -17,7 +18,11 @@ export class GameService {
         return this.games.slice();
       }
 
-      addIngredietsToShoppingList(genres: Genre[]) {
+      getGame(id: number) {
+        return this.games[id];
+      }
+
+      addGenresToShoppingList(genres: Genre[]) {
         this.shoppingListService.addGenres(genres);
       }
 }

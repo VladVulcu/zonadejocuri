@@ -11,6 +11,9 @@ import { GameItemComponent } from './games/game-list/game-item/game-item.compone
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component'
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { GameStartComponent } from './games/game-start/game-start.component';
+import { GameEditComponent } from './games/game-edit/game-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,12 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     GameItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
+    GameStartComponent,
+    GameEditComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [ShoppingListService],

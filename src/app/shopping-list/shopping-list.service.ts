@@ -1,8 +1,8 @@
-import { EventEmitter } from "@angular/core";
+import { Subject } from "rxjs";
 import { Genre } from "../shared/genre.model";
 
 export class ShoppingListService {
-    genreChanged = new EventEmitter<Genre[]>();
+    genreChanged = new Subject<Genre[]>();
     private genres: Genre[] = [
         new Genre('Action'),
         new Genre('Adventure'),
@@ -14,12 +14,12 @@ export class ShoppingListService {
     
     addGenre(genre: Genre) {
         this.genres.push(genre);
-        this.genreChanged.emit(this.genres.slice());
+        this.genreChanged.next(this.genres.slice());
     }
 
     addGenres(genres: Genre[]) {
         for (let genre of genres)
             this.addGenre(genre);
-         this.genreChanged.emit(this.genres.slice());
+         this.genreChanged.next(this.genres.slice());
     }
 }
