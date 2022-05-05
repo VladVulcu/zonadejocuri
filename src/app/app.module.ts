@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +15,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { GameStartComponent } from './games/game-start/game-start.component';
 import { GameEditComponent } from './games/game-edit/game-edit.component';
-import { FormsModule } from '@angular/forms';
+import { ContactComponent } from './contact/contact.component';
+
 
 @NgModule({
   declarations: [
@@ -27,11 +30,15 @@ import { FormsModule } from '@angular/forms';
     ShoppingEditComponent,
     GameStartComponent,
     GameEditComponent,
+    ContactComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

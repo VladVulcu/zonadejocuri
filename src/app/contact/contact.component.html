@@ -1,0 +1,58 @@
+
+
+
+<div class="container py-4">
+
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <div class="mt-3">
+        <label class="form-label" for="name">Name</label>
+        <input 
+        class="form-control" 
+        id="name" 
+        type="text"
+        name="name"
+        ngModel
+        required
+        minlength="5"
+        #username="ngModel">
+      </div>
+      <span *ngIf="!username.valid && username.touched" class="help-block">A username of minimum 5 characters must be provided!</span>
+  
+      <div class="mt-3">
+        <label class="form-label" for="emailAddress">Email Address</label>
+        <input 
+        class="form-control" 
+        id="emailAddress" 
+        type="email"
+        ngModel
+        name="email"
+        required
+        email
+        #email="ngModel">
+      </div>
+      <span *ngIf="!email.valid && email.touched" class="help-block">Please enter a valid email!</span>
+
+      <div class="mt-3">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-control"
+        id="message"
+        type="text"
+        ngModel
+        name="message"
+        required
+        minlength="50"
+        style="height: 10rem;"
+        #message="ngModel"></textarea>
+      </div>
+      <span *ngIf="!message.valid && message.touched" class="help-block">The minimum length for the message is 50 characters!</span>
+      <div class="space-bottom">
+      <div class="d-grid mt-4">
+        <button class="btn btn-primary" type="submit" [disabled]="!contactForm.valid">Submit</button>
+      </div>
+      <div class="alert alert-success mt-5" role="alert" *ngIf="formSubmitSuccess">
+        <h3 class="alert-heading">Thank you for contacting us. We will respond back as soon as possible!</h3>
+      </div>
+    </div>
+    </form>
+  
+  </div>

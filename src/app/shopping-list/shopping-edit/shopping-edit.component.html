@@ -3,20 +3,28 @@
         <form (ngSubmit)="onAddItem(form)" #form="ngForm">
             <div class="row">
                 <div class="col-sm-5 form-group">
-                    <label for="name">Name</label>
-                    <input 
-                    type="text" 
+                    <label for="name">Game</label>
+                    <select                    
                     id="name" 
-                    class="form-control"
-                    ngModel
-                    name="name">
-                </div>
+                    class="form-select"
+                    [ngModel]="games"
+                    name="name"
+                    required>
+                    <option value="FIFA 22">FIFA 22</option>
+                    <option value="Spider Man">Spider Man</option>
+                    <option value="Ratchet & Clank">Ratchet & Clank</option>
+                </select>
+                </div> 
             </div>
+
             <div class="col-sm-6 form-group mt-3">
                 <div class="col-xs-12">
-                    <button class="btn btn-success" type="submit">Add</button>
-                    <button class="btn btn-danger"  type="button">Delete</button>
-                    <button class="btn btn-primary" type="button">Clear</button>
+                    <button 
+                    class="btn btn-success" 
+                    type="submit" 
+                    [disabled]="!form.valid">Add Game</button>
+                    <button class="btn btn-danger"  type="button" (click)="onDelete()">Delete Game</button>
+                    <button class="btn btn-primary" type="button" (click)="onClear()">Clear Game</button>
                 </div>
             </div>
         </form>

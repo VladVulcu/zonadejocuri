@@ -6,7 +6,7 @@
 <div class="row mt-3">
     <div class="col-xs-10">
         <ul class="list-group">
-            <a class="list-group-item" style="cursor: pointer" *ngFor="let g of genres">{{g.name}}</a>
+            <a class="list-group-item" style="cursor: pointer" *ngFor="let game of games; let i = index" (click)="onEditItem(i)">{{game.name}}</a>
         </ul>
     </div>
 </div>

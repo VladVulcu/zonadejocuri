@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Genre } from '../shared/genre.model';
+import { Game } from '../games/game.model';
 import { ShoppingListService } from './shopping-list.service';
 
 @Component({
@@ -9,21 +9,27 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.css'],
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
-  genres: Genre[];
-  private genresChangedSubscription: Subscription;
+  games: Game[];
+  private gameChangedSubscription: Subscription;
 
   constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit(): void {
-    this.genres = this.shoppingListService.getGenres();
-    this.genresChangedSubscription = this.shoppingListService.genreChanged.subscribe(
-      (genres: Genre[]) => {
-        this.genres = genres;
+
+    this.games = this.shoppingListService.getGames();
+    this.gameChangedSubscription = this.shoppingListService.gameChanged.subscribe(
+      (games: Game []) => {
+        this.games = games;
+        console.log(this.games);
       }
     );
   }
 
+  onEditItem(index: number) {
+    this.shoppingListService.gameEditStarted.next(index);
+  }
+
   ngOnDestroy(): void {
-    this.genresChangedSubscription.unsubscribe();
+    this.gameChangedSubscription.unsubscribe();
   }
 }

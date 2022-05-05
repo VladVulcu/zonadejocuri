@@ -1,0 +1,14 @@
+.content-outer-container {
+    min-height: 100vh;
+}
+
+.footer-container {
+    margin-top: -56px;
+}
+
+.footer-content {
+    text-align: center;
+    background-color: #181818;
+    color: white;
+    width: 100%;
+}

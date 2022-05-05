@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactComponent } from './contact/contact.component';
 import { GameDetailComponent } from './games/game-detail/game-detail.component';
 import { GameEditComponent } from './games/game-edit/game-edit.component';
 import { GameStartComponent } from './games/game-start/game-start.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
     {path: ':id', component: GameDetailComponent},
     {path: ':id/edit', component: GameEditComponent}
   ]},
-  {path: 'shopping-list', component: ShoppingListComponent}
+  {path: 'shopping-list', component: ShoppingListComponent},
+  {path: 'contact', component: ContactComponent}
 ];
 
 @NgModule({

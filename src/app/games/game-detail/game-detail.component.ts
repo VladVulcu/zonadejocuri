@@ -23,7 +23,7 @@ export class GameDetailComponent implements OnInit {
   }
 
   onAddToShoppingList() {
-    this.gameService.addGenresToShoppingList(this.game.genres);
+    this.gameService.addGameToShoppingList(this.game);
   }
 
   onEditGame() {
