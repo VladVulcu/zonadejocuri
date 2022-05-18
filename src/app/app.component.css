@@ -1,5 +1,7 @@
 .content-outer-container {
     min-height: 100vh;
+    background-image: url("https://wallpaperaccess.com/full/1560881.png");
+    background-size: cover;
 }
 
 .footer-container {

@@ -14,8 +14,10 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component'
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { GameStartComponent } from './games/game-start/game-start.component';
-import { GameEditComponent } from './games/game-edit/game-edit.component';
 import { ContactComponent } from './contact/contact.component';
+import { OrderCompleteComponent } from './shopping-list/order-complete/order-complete.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -29,9 +31,10 @@ import { ContactComponent } from './contact/contact.component';
     ShoppingListComponent,
     ShoppingEditComponent,
     GameStartComponent,
-    GameEditComponent,
     ContactComponent,
-    
+    OrderCompleteComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

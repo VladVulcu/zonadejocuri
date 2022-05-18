@@ -1,0 +1,38 @@
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-10 col-xl-10">
+          <div class="card border-top border-bottom border-3" style="border-color:#4B0082 !important;">
+            <div class="card-body p-5">
+              <p class="lead fw-bold mb-5" style="color:#4B0082;"> 
+                  Salut {{this.userData.email}},  
+                  <br>
+                  Îți mulțumim că ne-ai ales.
+              </p>
+              <div class="row">
+                <div class="col mb-3">
+                    <div class="d-flex justify-content-center">
+                        <p class="currentDay">Comanda înregistrată în <mark>{{currentDate | date:'dd-MM-yyyy'}}</mark></p>
+                    </div>
+                </div>
+              </div>
+            <div class="products">
+                <div class="row">
+                  <ul>
+                    <li class="product" *ngFor="let game of games">{{this.game.name}}</li>
+                  </ul>
+              </div> 
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="orderDay mt-4">Comanda va fi gata în <mark>{{orderDate | date:'dd-MM-yyyy'}}.</mark></p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="orderDay">Ridicare: Str. Ocnei, nr. 55, Sibiu, RO</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" (click)="navigateBack()">Întoarce-te pe pagina principală</button>
+    </div>

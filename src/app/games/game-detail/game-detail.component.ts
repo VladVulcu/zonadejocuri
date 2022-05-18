@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 import { Game } from '../game.model';
 import { GameService } from '../game.service';
 
@@ -11,23 +12,27 @@ import { GameService } from '../game.service';
 export class GameDetailComponent implements OnInit {
   game: Game;
   id: number;
-  constructor(private gameService: GameService, private route: ActivatedRoute, private router: Router) { }
+  shoppingListItems = 0;
+
+  constructor(private gameService: GameService, private route: ActivatedRoute, private router: Router, private shoppingListService: ShoppingListService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
         this.game = this.gameService.getGame(this.id);
-      }
-    );
+        this.getShoppingListItems();
+      });
   }
-
   onAddToShoppingList() {
-    this.gameService.addGameToShoppingList(this.game);
+    if (this.shoppingListService.getGames().length < 5) {
+      this.gameService.addGameToShoppingList(this.game);
+    }
+    this.getShoppingListItems();
   }
 
-  onEditGame() {
-    this.router.navigate(['edit'], {relativeTo: this.route});
+  getShoppingListItems() {
+    this.shoppingListItems = this.shoppingListService.getGames().length;
   }
 
 }

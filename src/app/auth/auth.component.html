@@ -1,0 +1,49 @@
+<div class="container py-4">
+    <div class="row">
+            <div class="d-flex justify-content-center" *ngIf="isLoading">
+                <app-loading-spinner></app-loading-spinner>
+            </div>
+            <div class="col-xs-12 col-md-8">
+                <div class="alert alert-danger" *ngIf="error" role="alert">
+                    <strong>{{error}}</strong>
+                </div>
+            <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+                <div class="mt-3">
+                    <label for="email" class="form-label">Adresa de Email</label>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    class="form-control mb-2"
+                    ngModel
+                    name="email"
+                    required
+                    email>
+                </div>
+                <div class="mt-3">
+                    <label for="password" class="form-label">Parola</label>
+                    <input 
+                    type="password" 
+                    id="password" 
+                    class="form-control mb-2"
+                    ngModel
+                    name="password"
+                    required
+                    minlength="6"
+                    >
+                </div>
+                <div class="mt-5">
+                        <button 
+                        class="btn btn-primary state" 
+                        type="submit"
+                        [disabled]="!authForm.valid">
+                        {{isLoginMode ? 'Loghează-te' : 'Înregistrează-te'}}</button>
+                        <button 
+                        class="btn btn-primary switchstate" 
+                        type="button" 
+                        (click)="onSwitchState()">
+                        Schimbă pe {{isLoginMode ? 'Înregistrare' : 'Logare'}}</button> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

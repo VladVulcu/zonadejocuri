@@ -1,3 +1,35 @@
 ul {
     margin-bottom: 100px;
 }
+
+h1, h4 {
+    color: white;
+}
+
+.btn:after {
+    content: "";
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 250px;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px white;
+}
+  
+.btn:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+}
+
+span {
+    color: red;
+    font-size: 16px;
+}

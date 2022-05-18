@@ -1,3 +1,21 @@
 ul {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.order {
     margin-bottom: 100px;
+    padding: 10px;
+}
+
+span {
+    color: red;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.noProducts {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    color: white;
 }

@@ -1,10 +1,18 @@
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { Game } from "../games/game.model";
 
+@Injectable()
 export class ShoppingListService {
+
+    api_url = "https://localhost:44340/api/Order";
+
     gameEditStarted = new Subject<number>();
     gameChanged = new Subject<Game[]>();
     private games: Game[] = [];
+
+    constructor(private http: HttpClient) {}
 
     getGames() {
         return this.games.slice();
@@ -22,5 +30,14 @@ export class ShoppingListService {
     deleteGame(index: number) {
         this.games.splice(index, 1);
         this.gameChanged.next(this.games.slice());
+    }
+
+    removesGames() {
+        this.games = [];
+        this.gameChanged.next(this.games.slice());
+    }
+
+    addOrder(order: Object) {
+       return this.http.post(this.api_url + '/CreateOrder', order);
     }
 }

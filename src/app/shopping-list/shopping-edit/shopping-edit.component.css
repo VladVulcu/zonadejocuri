@@ -1,7 +1,15 @@
 .btn-danger {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
-.btn-primary {
-    margin-left: 5px;
+.clear {
+    margin-left: 10px;
 }
+
+label {
+    color: white;
+    font-size: 18px;
+}
+
+
+

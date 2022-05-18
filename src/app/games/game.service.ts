@@ -6,12 +6,14 @@ import { Game } from "./game.model";
 @Injectable()
 export class GameService {
 
+
+
     private games: Game[] = [
-        new Game('FIFA 22', 'Take part in the new FIFA 22', '../../assets/fifa22.jpg', [new Genre('Sports'), new Genre('Single-/Multiplayer'), new Genre('Competition')]),
-        new Game('Spider Man', 'Peter Parker fighting big crime in New York.', '../../assets/spiderman.jpg', [new Genre('Open-World'), new Genre('Adventure'), new Genre('Crime')]),
-        new Game('Ratchet & Clank', 'Experience the new Ratchet & Clank adventure', '../../assets/ratchetclank.jpg', [new Genre('Open-World'), new Genre('Adventure'), new Genre('Mission-System')]),
-        new Game('Ratchet & Clank', 'Experience the new Ratchet & Clank adventure', '../../assets/ratchetclank.jpg', [new Genre('Open-World'), new Genre('Adventure'), new Genre('Mission-System')]),
-        new Game('Ratchet & Clank', 'Experience the new Ratchet & Clank adventure', '../../assets/ratchetclank.jpg', [new Genre('Open-World'), new Genre('Adventure'), new Genre('Mission-System')]),
+        new Game('Soccer Cup', 'Cel mai nou joc de fotbal', '../../assets/fotbal.jpg', [new Genre('Sport'), new Genre('Single-/Multiplayer'), new Genre('Competiție')]),
+        new Game('Ultimate Boxing', 'Devino campion', '../../assets/box.jpg', [new Genre('Sport'), new Genre('Violență'), new Genre('Competiție')]),
+        new Game('Mar.io', 'O aventură alături de Mar.io', '../../assets/mario.jpg', [new Genre('Singleplayer'), new Genre('Aventură'), new Genre('Acțiune')]),
+        new Game('Dunk The Ball', 'Cel mai nou joc de baschet', '../../assets/baschet.jpg', [new Genre('Sport'), new Genre('Single-/Multiplayer'), new Genre('Acțiune')]),
+        new Game('Chess Sim2k22', 'Învinge calculatorul la șah', '../../assets/sah.jpg', [new Genre('Singleplayer'), new Genre('Strategie'), new Genre('Sport')]),
       ];
 
       constructor(private shoppingListService: ShoppingListService) { }
@@ -27,4 +29,5 @@ export class GameService {
       addGameToShoppingList(game: Game) {
         this.shoppingListService.addGame(game);
       }
+
 }

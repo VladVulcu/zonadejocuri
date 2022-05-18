@@ -11,14 +11,9 @@ import { GameService } from '../game.service';
 export class GameListComponent implements OnInit {
   games: Game[];
 
-  constructor(private gameService: GameService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
     this.games = this.gameService.getGames();
   }
-
-  onNewGame() {
-    this.router.navigate(['new'], {relativeTo: this.route});
-  }
-
 }

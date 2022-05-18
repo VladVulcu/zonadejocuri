@@ -1,30 +1,31 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 mt-3">
         <form (ngSubmit)="onAddItem(form)" #form="ngForm">
             <div class="row">
                 <div class="col-sm-5 form-group">
-                    <label for="name">Game</label>
+                    <label class="form-label" for="name">Jocuri</label>
                     <select                    
                     id="name" 
                     class="form-select"
                     [ngModel]="games"
                     name="name"
                     required>
-                    <option value="FIFA 22">FIFA 22</option>
-                    <option value="Spider Man">Spider Man</option>
-                    <option value="Ratchet & Clank">Ratchet & Clank</option>
+                    <option value="Soccer Cup">Soccer Cup</option>
+                    <option value="Ultimate Boxing">Ultimate Boxing</option>
+                    <option value="Mar.io">Mar.io</option>
+                    <option value="Dunk The Ball">Dunk The Ball</option>
+                    <option value="Chess Sim2k22">Chess Sim2k22</option>
                 </select>
-                </div> 
+                </div>
             </div>
-
-            <div class="col-sm-6 form-group mt-3">
+            <div class="col-sm-10 form-group mt-3">
                 <div class="col-xs-12">
                     <button 
                     class="btn btn-success" 
-                    type="submit" 
-                    [disabled]="!form.valid">Add Game</button>
-                    <button class="btn btn-danger"  type="button" (click)="onDelete()">Delete Game</button>
-                    <button class="btn btn-primary" type="button" (click)="onClear()">Clear Game</button>
+                    type="submit"
+                    [disabled]="!form.valid || shoppingListItems == 5">Adaugă joc</button>
+                    <button class="btn btn-danger" type="button" (click)="onDelete()">Șterge joc</button>
+                    <button class="btn btn-primary clear" type="button" (click)="onClear()">Anulează selecția</button> 
                 </div>
             </div>
         </form>

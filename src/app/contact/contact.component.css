@@ -1,7 +1,20 @@
-.alert-success {
+.alert-info {
     text-align: center;
 }
 
 .space-bottom {
     margin-bottom: 100px;
+}
+
+label {
+    color: white;
+    font-size: 18px;
+}
+
+span {
+    color: white;
+}
+
+.alert-heading {
+    vertical-align: middle;
 }
