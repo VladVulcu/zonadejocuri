@@ -20,16 +20,15 @@ export class OrderCompleteComponent implements OnInit {
     _tokenExpirationDate: string
   } = JSON.parse(localStorage.getItem('userData')!);
 
-  constructor(private shoppingListService: ShoppingListService, private router: Router) {
+  constructor(private shoppingListService: ShoppingListService, private router: Router) {}
+
+  ngOnInit(): void {
     this.orderDate.setDate(this.orderDate.getDate() + 2);
     this.games = this.shoppingListService.getGames();
   }
 
-  ngOnInit(): void {
-  }
-
   navigateBack() {
-    this.shoppingListService.removesGames();
+    this.shoppingListService.removeGames();
     this.router.navigate(['games']);
   }
 

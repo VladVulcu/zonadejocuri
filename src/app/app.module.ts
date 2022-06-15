@@ -18,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
 import { OrderCompleteComponent } from './shopping-list/order-complete/order-complete.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { ResetPassComponent } from './auth/resetPassword.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     ContactComponent,
     OrderCompleteComponent,
     AuthComponent,
+    ResetPassComponent,
     LoadingSpinnerComponent
   ],
   imports: [

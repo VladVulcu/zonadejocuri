@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { User } from '../auth/user.model';
 import { Game } from '../games/game.model';
 import { ShoppingListService } from './shopping-list.service';
@@ -40,7 +40,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   
      var order = {
       name: userData.email,
-      product1: this.games[0]?.name,
+      product1: this.games[0].name,
       product2: this.games[1]?.name,
       product3: this.games[2]?.name,
       product4: this.games[3]?.name,

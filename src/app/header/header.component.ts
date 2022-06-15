@@ -10,8 +10,7 @@ import { AuthService } from "../auth/auth.service";
 export class HeaderComponent implements OnInit, OnDestroy{
     isAuthenticated = false;
     private userSub: Subscription;
-    width: number;
-    lower = 0;
+
     constructor(public router: Router, private authService: AuthService) {}
 
     ngOnInit() {
@@ -20,13 +19,6 @@ export class HeaderComponent implements OnInit, OnDestroy{
         });
     }
     
-    @HostListener('window:resize', ['$event'])
-    onWindowResize() {
-        this.width = window.innerWidth;
-        if (this.width < 500) {
-            this.lower = 1;
-        }
-    }
 
     ngOnDestroy() {
         this.userSub.unsubscribe();

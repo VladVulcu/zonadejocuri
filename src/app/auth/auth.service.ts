@@ -5,6 +5,7 @@ import { BehaviorSubject, Subject, throwError} from 'rxjs';
 import { User } from "./user.model";
 import { Router } from "@angular/router";
 
+
 interface AuthResponseData {
     kind: string;
     idToken: string;
@@ -17,6 +18,7 @@ interface AuthResponseData {
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
+
     user = new BehaviorSubject<User>(null!);
     private tokenExpirationTimer: any;
 
@@ -60,6 +62,14 @@ export class AuthService {
         }).pipe(catchError(this.handleError), tap(resData => {
             this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
         }));
+    }
+
+    passwordChange(email: string) {
+        return this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyBcu4N-M_2B7WHE7xvd56Mmut1xxih7TuE', 
+        {
+            requestType: "PASSWORD_RESET",
+            email: email
+        }).pipe(catchError(this.handleError))
     }
 
     autoLogout(expirationDuration: number) {

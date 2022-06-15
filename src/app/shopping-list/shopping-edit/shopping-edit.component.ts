@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Game } from 'src/app/games/game.model';
-import { GameService } from 'src/app/games/game.service';
 import { ShoppingListService } from '../shopping-list.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   currentItem: Game;
   shoppingListItems = 0;
 
-  games: Game[] = [] 
+  games: Game[] = [];
   @ViewChild('form') form: NgForm;
 
   constructor(private shoppingListService: ShoppingListService) {}
@@ -36,9 +35,10 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
   onAddItem(form: NgForm) {
     if (this.shoppingListService.getGames().length < 5) {
-    const value = form.value;
-    const newGame = new Game(value.name, value.description, value.imagePath, value.genres);
-    this.shoppingListService.addGame(newGame);
+      const value = form.value;
+      console.log(value);
+      const newGame = new Game(value.name, value.description, value.imagePath, value.genres);
+      this.shoppingListService.addGame(newGame);
     }
     this.getShoppingListItems();
   }

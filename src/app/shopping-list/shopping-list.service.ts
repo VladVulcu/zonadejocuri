@@ -32,7 +32,7 @@ export class ShoppingListService {
         this.gameChanged.next(this.games.slice());
     }
 
-    removesGames() {
+    removeGames() {
         this.games = [];
         this.gameChanged.next(this.games.slice());
     }

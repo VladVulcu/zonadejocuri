@@ -1,10 +1,8 @@
-
-
 .product {
     color: white;
 }
 
-.products ul{
+.products ul {
     background-color: black;
     list-style-type: none;
 }
@@ -35,3 +33,4 @@ mark {
     font-weight: bold;
     background: none;
 }
+  
