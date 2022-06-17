@@ -14,6 +14,7 @@ export class ResetPassComponent {
     error = false;
     formSubmitSuccess = false;
     isLoading = false;
+    submitted = false;
 
     constructor(private authService: AuthService, private router: Router) {}
 
@@ -30,6 +31,7 @@ export class ResetPassComponent {
 
         form.reset();
         this.error = false;
+        this.submitted = true;
     }
 
     navigateBack() {
